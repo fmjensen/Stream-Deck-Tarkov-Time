@@ -1,0 +1,46 @@
+{
+  "Actions": [
+    {
+      "Icon": "images/actionIcon",
+      "Name": "Tarkov Time",
+      "States": [
+        {
+          "Image": "images/actionDefaultImage",
+          "TitleAlignment": "middle",
+          "FontSize": "20",
+          "TitleColor": "Yellow",
+          "FontStyle": "Bold"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "This plugin will show the current Escape from Tarkov ingame time on every button push",
+      "UUID": "com.cmdrflemming.tarkovtime.action"
+    }
+  ],
+  "Category": "Gaming",
+  "CategoryIcon": "images/category/categoryIcon",
+  "Disabled": false,
+  "Author": "Cmdr Flemming",
+  "CodePathWin": "TarkovTime.exe",
+  "CodePathMac": "TarkovTime",
+  "PropertyInspectorPath": "property_inspector/property_inspector.html",
+  "Description": "This plugin displays Tarkov Time on a Stream Deck button.",
+  "Name": "TarkovTime",
+  "Icon": "images/pluginIcon",
+  "URL": "https://www.elgato.com/gaming/stream-deck",
+  "Version": "0.0.4",
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "4.1"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ]
+}

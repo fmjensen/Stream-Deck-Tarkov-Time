@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Tarkov Time Property Inspector</title>
+	<link rel="stylesheet" href="css/sdpi.css">
+	<link rel="stylesheet" href="css/property-inspector.css">
+</head>
+<body>
+	<div class="sdpi-wrapper">
+		<!-- for more examples of the types of fields supported in property inspector visit:
+			Elgato Github PiSamples -> https://github.com/elgatosf/streamdeck-pisamples
+			and
+			Elgato SDK Documentation -> https://developer.elgato.com/documentation/stream-deck/sdk/property-inspector/
+	-->
+
+		<div type="textarea" class="sdpi-item" id="json_data">
+			<div class="sdpi-item-label">
+				Current time
+			</div>
+			<span class="sdpi-item-value textarea">
+				<textarea type="textarea" id="json_data_textarea" onchange="setSettings(event.target.value, 'JsonData')"></textarea>
+			</span>
+		</div>
+
+	</div>
+	<script src="js/property-inspector.js"></script>
+</body>
+</html>
