@@ -9,6 +9,7 @@ Installation is explained under [Releases](https://github.com/fmjensen/Stream-De
 Here are some helpful references for both this plugin and the Stream Deck:
 
 * [Plugin Homepage](https://github.com/FritzAndFriends/StreamDeckToolkit)
+* Youtube video: [Building Stream Deck Plugins with C#](https://youtu.be/D5AZ_6S0f94)
 * [Stream Deck Page][Stream Deck]
 * [Stream Deck SDK Documentation][Stream Deck SDK]
 
