@@ -1,9 +1,9 @@
 # Stream-Deck-Tarkov-Time
 This plugin shows the current ingame Tarkov time on button press.
 
-It is currently utilizing https://tarkov-time.adam.id.au/ as source for the time.
+The plugin calculate Tarkov Time from Coordinated Universal Time (UTC).
 
-The plan is to make the plugin do the time-calculations on it's own in the next release.
+ToDo: Make the plugin update the shown Tarkov Time every real-time minute in the next release.
 
 https://user-images.githubusercontent.com/3484684/177481767-53327097-417e-4df9-848e-92b3a78996bc.mp4
 
