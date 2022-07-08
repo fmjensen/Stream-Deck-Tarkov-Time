@@ -5,7 +5,6 @@ var websocket = null,
   inInfo = null,
   actionInfo = {},
   settingsModel = {
-	  Counter: 0,
 	  JsonData: "Push \n me!"
   };
 
@@ -37,10 +36,6 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
 	var sdEvent = jsonObj['event'];
 	switch (sdEvent) {
 	  case "didReceiveSettings":
-		if (jsonObj.payload.settings.settingsModel.Counter) {
-		  settingsModel.Counter = jsonObj.payload.settings.settingsModel.Counter;
-		  document.getElementById('txtCounterValue').value = settingsModel.Counter;
-		}
 		if (jsonObj.payload.settings.settingsModel.JsonData) {
 			settingsModel.JsonData = jsonObj.payload.settings.settingsModel.JsonData;
 			document.getElementById('txtJsonDataValue').value = settingsModel.JsonData;
