@@ -104,10 +104,19 @@ e.g.: `internal class MyNextPluginAction : BaseStreamDeckAction`
 That's it! Repeat this process for any additional actions you wish to include and perform as part of your plugin.
 
 
+It is currently utilizing https://tarkov-time.adam.id.au/ as source for the time.
+
+The plan is to make the plugin do the time-calculations on it's own in the next release.
+
+https://user-images.githubusercontent.com/3484684/177481767-53327097-417e-4df9-848e-92b3a78996bc.mp4
+
+Installation is explained under [Releases](https://github.com/fmjensen/Stream-Deck-Tarkov-Time/releases).
+
 ## References
 Here are some helpful references for both this template and the Stream Deck:
 
 * [Plugin Homepage](https://github.com/FritzAndFriends/StreamDeckToolkit)
+* Youtube video: [Building Stream Deck Plugins with C#](https://youtu.be/D5AZ_6S0f94)
 * [Stream Deck Page][Stream Deck]
 * [Stream Deck SDK Documentation][Stream Deck SDK]
 
