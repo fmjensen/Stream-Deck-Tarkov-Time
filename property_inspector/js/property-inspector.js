@@ -12,15 +12,13 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
   uuid = inUUID;
   actionInfo = JSON.parse(inActionInfo);
   inInfo = JSON.parse(inInfo);
-  websocket = new WebSocket('ws://localhost:' + inPort);
+  websocket = new WebSocket('ws://127.0.0.1:' + inPort);
 
   //initialize values
   if (actionInfo.payload.settings.settingsModel) {
-	  settingsModel.Counter = actionInfo.payload.settings.settingsModel.Counter;
 	  settingsModel.JsonData = actionInfo.payload.settings.settingsModel.JsonData;
   }
 	
-	document.getElementById('txtCounterValue').value = settingsModel.Counter;
 	document.getElementById('txtJsonDataValue').value = settingsModel.JsonData;
 
   websocket.onopen = function () {

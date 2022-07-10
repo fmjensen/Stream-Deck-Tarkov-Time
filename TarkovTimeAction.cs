@@ -10,30 +10,31 @@ namespace TarkovTime
     [ActionUuid(Uuid = "com.cmdrflemming.tarkovtime.action")]
     public class TarkovTimeAction : BaseStreamDeckActionWithSettingsModel<Models.TarkovTimeSettingsModel>
     {
-        public string btnText;
-        TarkovTime tt = new TarkovTime();
+        readonly TarkovTime tt = new();
 
         public override async Task OnKeyDown(StreamDeckEventPayload args)
         {
-            btnText = "";
+            // Clear the stored Tarkov Time.
+            SettingsModel.JsonData = "";
 
-            await Manager.SetTitleAsync(args.context, btnText);
+            // Update the PluginTitle with the empty string
+            await Manager.SetTitleAsync(args.context, SettingsModel.JsonData.ToString());
 
-            SettingsModel.JsonData = btnText;
-            await Manager.SetSettingsAsync(args.context, btnText);
+            // Save the empty Tarkov Time string.
+            await Manager.SetSettingsAsync(args.context, SettingsModel.JsonData.ToString());
         }
 
         public override async Task OnKeyUp(StreamDeckEventPayload args)
         {
+            // Fetch the current Tarkov Times
             var TTleft = tt.RealTimeToTarkovTime(true);
             var TTright = tt.RealTimeToTarkovTime(false);
-
-            btnText = TTleft + "\n" + TTright;
-
-            await Manager.SetTitleAsync(args.context, btnText);
-
-            SettingsModel.JsonData = btnText;
-            await Manager.SetSettingsAsync(args.context, btnText);
+            // Combine the two the current Tarkov Times and store it in SettingsModel
+            SettingsModel.JsonData = TTleft + "\n" + TTright;
+            // Update the PluginTitle with the current Tarkov Times
+            await Manager.SetTitleAsync(args.context, SettingsModel.JsonData.ToString());
+            // Save the updated TArkov Times
+            await Manager.SetSettingsAsync(args.context, SettingsModel.JsonData.ToString());
         }
 
         public override async Task OnDidReceiveSettings(StreamDeckEventPayload args)
@@ -45,7 +46,14 @@ namespace TarkovTime
         public override async Task OnWillAppear(StreamDeckEventPayload args)
         {
             await base.OnWillAppear(args);
+            // Fetch the current Tarkov Times
+            var TTleft = tt.RealTimeToTarkovTime(true);
+            var TTright = tt.RealTimeToTarkovTime(false);
+            // Combine the two the current Tarkov Times and store it in SettingsModel
+            SettingsModel.JsonData = TTleft + "\n" + TTright;
+            // Update the PluginTitle with the current Tarkov Times
             await Manager.SetTitleAsync(args.context, SettingsModel.JsonData.ToString());
+            // Save the updated TArkov Times
             await Manager.SetSettingsAsync(args.context, SettingsModel.JsonData.ToString());
         }
     }
