@@ -12,7 +12,7 @@ Installation is explained under [Releases](https://github.com/fmjensen/Stream-De
 ## References
 Here are some helpful references for both this plugin and the Stream Deck:
 
-* [Plugin Homepage](https://github.com/FritzAndFriends/StreamDeckToolkit)
+* [Stream Deck Toolkit](https://github.com/FritzAndFriends/StreamDeckToolkit): a .NET Standard library, template, and tools for building extensions to the Elgato Stream Deck.
 * Youtube video: [Building Stream Deck Plugins with C#](https://youtu.be/D5AZ_6S0f94)
 * [Stream Deck Page][Stream Deck]
 * [Stream Deck SDK Documentation][Stream Deck SDK]
