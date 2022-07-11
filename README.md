@@ -3,6 +3,8 @@ This plugin shows the current ingame Tarkov time on a button of your choise.
 
 The plugin calculate Tarkov Time from Coordinated Universal Time (UTC).
 
+The shown Tarkov Time is updated every 7 seconds and on button press.
+
 # Installation
 1.  Download the _com.cmdrflemming.tarkovtime.streamDeckPlugin_ file from the [latest release](https://github.com/fmjensen/Stream-Deck-Tarkov-Time/releases/latest) to you computer.
 2.  Doubble-click the _com.cmdrflemming.tarkovtime.streamDeckPlugin_ file.
