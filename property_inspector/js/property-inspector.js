@@ -5,7 +5,7 @@ var websocket = null,
   inInfo = null,
   actionInfo = {},
   settingsModel = {
-	  JsonData: "Push \n me!"
+	  SavedTarkovTime: "Push \n me!"
   };
 
 function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, inActionInfo) {
@@ -16,10 +16,10 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
 
   //initialize values
   if (actionInfo.payload.settings.settingsModel) {
-	  settingsModel.JsonData = actionInfo.payload.settings.settingsModel.JsonData;
+	  settingsModel.SavedTarkovTime = actionInfo.payload.settings.settingsModel.SavedTarkovTime;
   }
 	
-	document.getElementById('txtJsonDataValue').value = settingsModel.JsonData;
+	document.getElementById('txtSavedTarkovTimeValue').value = settingsModel.SavedTarkovTime;
 
   websocket.onopen = function () {
 	var json = { event: inRegisterEvent, uuid: inUUID };
@@ -34,9 +34,9 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
 	var sdEvent = jsonObj['event'];
 	switch (sdEvent) {
 	  case "didReceiveSettings":
-		if (jsonObj.payload.settings.settingsModel.JsonData) {
-			settingsModel.JsonData = jsonObj.payload.settings.settingsModel.JsonData;
-			document.getElementById('txtJsonDataValue').value = settingsModel.JsonData;
+			if (jsonObj.payload.settings.settingsModel.SavedTarkovTime) {
+				settingsModel.SavedTarkovTime = jsonObj.payload.settings.settingsModel.SavedTarkovTime;
+				document.getElementById('txtSavedTarkovTimeValue').value = settingsModel.SavedTarkovTime;
 		}
 		break;
 	  default:

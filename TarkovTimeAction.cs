@@ -33,7 +33,7 @@ namespace TarkovTime
             // Update the PluginTitle with the empty string
             await Manager.SetTitleAsync(args.context, SettingsModel.SavedTarkovTime.ToString());
             // Save the empty Tarkov Time string.
-            await Manager.SetSettingsAsync(args.context, SettingsModel.SavedTarkovTime.ToString());
+            await Manager.SetSettingsAsync(args.context, SettingsModel);
         }
 
         /** When the user releases a key, the plugin will receive the keyUp event as a JSON structure
@@ -74,8 +74,8 @@ namespace TarkovTime
             SettingsModel.SavedTarkovTime = TTleft + "\n\n" + TTright;
             // Update the PluginTitle with the current Tarkov Times
             await Manager.SetTitleAsync(args.context, SettingsModel.SavedTarkovTime.ToString());
-            // Save the updated TArkov Times
-            await Manager.SetSettingsAsync(args.context, SettingsModel.SavedTarkovTime.ToString());
+            // Save the updated Tarkov Time persistent.
+            await Manager.SetSettingsAsync(args.context, SettingsModel);
         }
     }
 }
