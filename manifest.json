@@ -28,7 +28,7 @@
   "Name": "TarkovTime",
   "Icon": "images/pluginIcon",
   "URL": "https://github.com/fmjensen/Stream-Deck-Tarkov-Time",
-  "Version": "0.2.1",
+  "Version": "0.2.2",
   "SDKVersion": 2,
   "Software": {
     "MinimumVersion": "4.1"
