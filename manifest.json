@@ -13,7 +13,7 @@
         }
       ],
       "SupportedInMultiActions": false,
-      "Tooltip": "This plugin will show the current Escape from Tarkov ingame time on every button push",
+      "Tooltip": "This plugin displays Tarkov Time on a Stream Deck button.",
       "UUID": "com.cmdrflemming.tarkovtime.action"
     }
   ],
@@ -21,23 +21,18 @@
   "CategoryIcon": "images/category/categoryIcon",
   "Disabled": false,
   "Author": "Cmdr Flemming",
-  "CodePathWin": "TarkovTime.exe",
-  "CodePathMac": "TarkovTime",
+  "CodePath": "TarkovTime.exe",
   "PropertyInspectorPath": "property_inspector/property_inspector.html",
-  "Description": "This plugin displays Tarkov Time on a Stream Deck button.",
+  "Description": "This plugin will show the current Escape from Tarkov ingame time-zones on a button of choice.",
   "Name": "TarkovTime",
   "Icon": "images/pluginIcon",
   "URL": "https://github.com/fmjensen/Stream-Deck-Tarkov-Time",
-  "Version": "0.2.2",
+  "Version": "0.2.3",
   "SDKVersion": 2,
   "Software": {
     "MinimumVersion": "4.1"
   },
   "OS": [
-    {
-      "Platform": "mac",
-      "MinimumVersion": "10.11"
-    },
     {
       "Platform": "windows",
       "MinimumVersion": "10"
