@@ -3,6 +3,12 @@ This plugin shows the current ingame Escape from Tarkov time on a button of your
 
 Note that Stream Deck Tarkov Time does _not_ need the Escape from Tarkov game to be running to be able to show the two timezones on the button you choose.
 
+https://user-images.githubusercontent.com/3484684/178591353-6ca02422-b71a-45bc-82c4-25ac22898f3c.mp4
+
+# Requirements
+* Windows 10 or higher.
+* .NET Core 3.1 - Get the x64 for Desktop [here](https://dotnet.microsoft.com/en-us/download/dotnet/3.1) if you do not have it already.
+
 # Installation
 1.  Download the _com.cmdrflemming.tarkovtime.streamDeckPlugin_ file from the [latest release](https://github.com/fmjensen/Stream-Deck-Tarkov-Time/releases/latest) to you computer.
 2.  Doubble-click the _com.cmdrflemming.tarkovtime.streamDeckPlugin_ file.
@@ -10,20 +16,15 @@ Note that Stream Deck Tarkov Time does _not_ need the Escape from Tarkov game to
 4.  Drag the plugin to a button on your Stream Deck.
 5.  Enjoy Tarkov Time auto-update every 7 seconds and button press :)
 
-https://user-images.githubusercontent.com/3484684/178591353-6ca02422-b71a-45bc-82c4-25ac22898f3c.mp4
-
-# Requirements
-* Windows 10 or higher.
-* .NET Core 3.1 - Get it [here](https://dotnet.microsoft.com/en-us/download/dotnet/3.1) if you do not have it already.
-
 # Trouble shooting
-* If you get a yellow triangle with a black exclamation point on the button then please check if you got **.NET Core 3.1** installed
+* If you get a _yellow triangle with a black exclamation point_ on the button then please check if you got **.NET Core 3.1** installed.
+* Open an issue on the [Issues tracker](https://github.com/fmjensen/Stream-Deck-Tarkov-Time/issues) if you found a bug. I will try to help as much as possible when i got some sparetime.
 
 # ToDo: 
 * Nothing is in the backlog at this time. Feel free to send suggestions and bugreports using the [Issues tracker](https://github.com/fmjensen/Stream-Deck-Tarkov-Time/issues).
 
 ## References
-Here are some helpful references for both this plugin and the Stream Deck:
+Here are some references for both this plugin the tools i used  and the Stream Deck:
 
 * [Stream Deck Toolkit](https://github.com/FritzAndFriends/StreamDeckToolkit): a .NET Standard library, template, and tools for building extensions to the Elgato Stream Deck.
 * Youtube video: [Building Stream Deck Plugins with C#](https://youtu.be/D5AZ_6S0f94)
