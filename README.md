@@ -14,6 +14,10 @@ https://user-images.githubusercontent.com/3484684/178591353-6ca02422-b71a-45bc-8
 
 # Requirements
 * Windows 10 or higher.
+* .NET Core 3.1 - Get it [here](https://dotnet.microsoft.com/en-us/download/dotnet/3.1) if you do not have it already.
+
+# Trouble shooting
+* If you get a yellow triangle with a black exclamation point on the button then please check if you got **.NET Core 3.1** installed
 
 # ToDo: 
 * Nothing is in the backlog at this time. Feel free to send suggestions and bugreports using the [Issues tracker](https://github.com/fmjensen/Stream-Deck-Tarkov-Time/issues).
