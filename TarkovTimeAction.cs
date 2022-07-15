@@ -20,6 +20,7 @@ namespace TarkovTime
          */
         public override async Task OnWillAppear(StreamDeckEventPayload args)
         {
+            await WriteToLog("OnWillAppear triggered.");
             await base.OnWillAppear(args);
             await StartTimer(args, TimeSpan.FromSeconds(7), CancellationToken.None);
         }
@@ -28,6 +29,7 @@ namespace TarkovTime
          */
         public override async Task OnKeyDown(StreamDeckEventPayload args)
         {
+            await WriteToLog("OnKeyDown triggered.");
             // Clear the stored Tarkov Time.
             SettingsModel.SavedTarkovTime = "";
             // Update the PluginTitle with the empty string
@@ -40,6 +42,7 @@ namespace TarkovTime
          */
         public override async Task OnKeyUp(StreamDeckEventPayload args)
         {
+            await WriteToLog("OnKeyUp triggered.");
             await StartTimer(args, TimeSpan.FromSeconds(7), CancellationToken.None);
         }
 
@@ -48,7 +51,8 @@ namespace TarkovTime
          */
         public override async Task OnDidReceiveSettings(StreamDeckEventPayload args)
         {
-            await base.OnDidReceiveSettings(args);
+            await WriteToLog("OnDidReceiveSettings triggered.");
+            //await base.OnDidReceiveSettings(args);
             await StartTimer(args, TimeSpan.FromSeconds(7), CancellationToken.None);
         }
 
@@ -76,6 +80,10 @@ namespace TarkovTime
             await Manager.SetTitleAsync(args.context, SettingsModel.SavedTarkovTime.ToString());
             // Save the updated Tarkov Time persistent.
             await Manager.SetSettingsAsync(args.context, SettingsModel);
+        }
+        public async Task WriteToLog(string message)
+        {
+            await Manager.LogMessageAsync(" SDTT ", message);
         }
     }
 }
