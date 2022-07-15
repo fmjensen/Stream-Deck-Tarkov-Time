@@ -8,7 +8,7 @@ Tarkov Time is calculated from Coordinated Universal Time (UTC). The shown Tarko
 2.  Doubble-click the _com.cmdrflemming.tarkovtime.streamDeckPlugin_ file.
 3.  Answer **yes** to let the plugin be installed.
 4.  Drag the plugin to a button on your Stream Deck.
-5.  Enjoy Tarkov Time on every button press :)
+5.  Enjoy Tarkov Time auto-update every 7 seconds and button press :)
 
 https://user-images.githubusercontent.com/3484684/178591353-6ca02422-b71a-45bc-82c4-25ac22898f3c.mp4
 
