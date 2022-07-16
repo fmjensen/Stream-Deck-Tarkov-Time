@@ -7,7 +7,7 @@ https://user-images.githubusercontent.com/3484684/178591353-6ca02422-b71a-45bc-8
 
 # Requirements
 * Windows 10 or higher.
-* .NET Core 3.1 - Get the x64 for Desktop [here](https://dotnet.microsoft.com/en-us/download/dotnet/3.1) if you do not have it already.
+* ~~.NET Core 3.1 - Get the x64 for Desktop [here](https://dotnet.microsoft.com/en-us/download/dotnet/3.1) if you do not have it already.~~ This should not be nessesary anymore.
 
 # Installation
 1.  Download the _com.cmdrflemming.tarkovtime.streamDeckPlugin_ file from the [latest release](https://github.com/fmjensen/Stream-Deck-Tarkov-Time/releases/latest) to you computer.
@@ -17,11 +17,11 @@ https://user-images.githubusercontent.com/3484684/178591353-6ca02422-b71a-45bc-8
 5.  Enjoy Tarkov Time auto-update every 7 seconds and button press :)
 
 # Trouble shooting
-* If you get a _yellow triangle with a black exclamation point_ on the button then please check if you got **.NET Core 3.1** installed.
-* Open an issue on the [Issues tracker](https://github.com/fmjensen/Stream-Deck-Tarkov-Time/issues) if you found a bug. I will try to help as much as possible when i got some sparetime.
+Open an issue on the [Issues tracker](https://github.com/fmjensen/Stream-Deck-Tarkov-Time/issues) if you believe you found a bug. Please include logs and screenshots/photos if it makes sense. I will try to help as much as possible when i got some sparetime.
+
 
 # ToDo: 
-* Nothing is in the backlog at this time. Feel free to send suggestions and bugreports using the [Issues tracker](https://github.com/fmjensen/Stream-Deck-Tarkov-Time/issues).
+Nothing is in the backlog at this time. Feel free to send suggestions and bugreports using the [Issues tracker](https://github.com/fmjensen/Stream-Deck-Tarkov-Time/issues).
 
 ## References
 Here are some references for both this plugin the tools i used  and the Stream Deck:
