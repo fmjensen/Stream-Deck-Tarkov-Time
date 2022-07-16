@@ -12,6 +12,10 @@ namespace TarkovTime
     public class TarkovTimeAction : BaseStreamDeckActionWithSettingsModel<Models.TarkovTimeSettingsModel>
     {
         readonly TarkovTime tt = new();
+        public CancellationTokenSource _cancelSource;
+        public CancellationToken _token;
+        public int delayInSeconds = 7;
+        public bool debug = false; // Set this to true to get logging in the file at %AppData%\Roaming\Elgato\StreamDeck\logs
 
         /**This event triggers when an instance of an action is displayed on Stream Deck, for example, 
          * when the hardware is first plugged in or when a folder containing that action is entered, 
@@ -20,30 +24,32 @@ namespace TarkovTime
          */
         public override async Task OnWillAppear(StreamDeckEventPayload args)
         {
-            await WriteToLog("OnWillAppear triggered.");
+            if (debug) await WriteToLog("OnWillAppear triggered.");
             await base.OnWillAppear(args);
-            await StartTimer(args, TimeSpan.FromSeconds(7), CancellationToken.None);
+            _cancelSource = new CancellationTokenSource();
+            await StartTimer(args, TimeSpan.FromSeconds(delayInSeconds), _token = _cancelSource.Token);
         }
 
         /**When the user presses a key, the plugin will receive the keyDown event.
          */
         public override async Task OnKeyDown(StreamDeckEventPayload args)
         {
-            await WriteToLog("OnKeyDown triggered.");
+            if (debug) await WriteToLog("OnKeyDown triggered.");
             // Clear the stored Tarkov Time.
             SettingsModel.SavedTarkovTime = "";
             // Update the PluginTitle with the empty string
             await Manager.SetTitleAsync(args.context, SettingsModel.SavedTarkovTime.ToString());
-            // Save the empty Tarkov Time string.
-            await Manager.SetSettingsAsync(args.context, SettingsModel);
+            // Cancel the running timer
+            _cancelSource.Cancel();
         }
 
         /** When the user releases a key, the plugin will receive the keyUp event as a JSON structure
          */
         public override async Task OnKeyUp(StreamDeckEventPayload args)
         {
-            await WriteToLog("OnKeyUp triggered.");
-            await StartTimer(args, TimeSpan.FromSeconds(7), CancellationToken.None);
+            if (debug) await WriteToLog("OnKeyUp triggered.");
+            _cancelSource = new CancellationTokenSource();
+            await StartTimer(args, TimeSpan.FromSeconds(delayInSeconds), _token = _cancelSource.Token);
         }
 
         /**The didReceiveSettings event is received after calling the getSettings API to 
@@ -51,9 +57,8 @@ namespace TarkovTime
          */
         public override async Task OnDidReceiveSettings(StreamDeckEventPayload args)
         {
-            await WriteToLog("OnDidReceiveSettings triggered.");
-            //await base.OnDidReceiveSettings(args);
-            await StartTimer(args, TimeSpan.FromSeconds(7), CancellationToken.None);
+            if (debug) await WriteToLog("OnDidReceiveSettings triggered.");
+            await base.OnDidReceiveSettings(args);
         }
 
         // Tarkov Time calculation and timer for auto updateing the button follows
@@ -80,6 +85,8 @@ namespace TarkovTime
             await Manager.SetTitleAsync(args.context, SettingsModel.SavedTarkovTime.ToString());
             // Save the updated Tarkov Time persistent.
             await Manager.SetSettingsAsync(args.context, SettingsModel);
+
+            if (debug) await WriteToLog(SettingsModel.SavedTarkovTime.ToString());
         }
         public async Task WriteToLog(string message)
         {

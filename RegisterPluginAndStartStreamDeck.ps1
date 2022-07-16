@@ -1,6 +1,5 @@
 ﻿Write-Host "`n Gathering deployment items..."
-Write-Host " Script root: $PSScriptRoot`n"
-Write-Host " $destDir "
+Write-Host "`n Script root: $PSScriptRoot"
 
 $basePath = $PSScriptRoot
 
@@ -16,10 +15,12 @@ $projectXML = [xml]$projectContent;
 $buildConfiguration = "Debug"
 
 # Get the target .net core framework
-$targetFrameworkName = $projectXML.Project.PropertyGroup.TargetFramework;
+$targetFrameworkName = $projectXML.Project.PropertyGroup.TargetFramework[0];
+Write-Host "`n Target Framework: $targetFrameworkName.";
 
 # Set local path references
-$streamDeckExePath = "$($env:ProgramW6432 )\ProgramFiles\Elgato\StreamDeck\StreamDeck.exe"
+$streamDeckExePath = "$($env:ProgramW6432 )\Elgato\StreamDeck\StreamDeck.exe"
+Write-Host "`n Stream Deck path: $streamDeckExePath";
 
 # For now, this PS script will only be run on Windows.
 $bindir = "$basePath\bin\Debug\$targetFrameworkName\win-x64"
@@ -42,7 +43,7 @@ $destDir = "$($env:APPDATA)\Elgato\StreamDeck\Plugins\$pluginID.sdPlugin"
 
 $pluginName = Split-Path $basePath -leaf
 
-Get-Process -Name ("StreamDeck", $pluginName) -ErrorAction SilentlyContinue | Stop-Process –force -ErrorAction SilentlyContinue
+Get-Process -Name ("StreamDeck", $pluginName) -ErrorAction SilentlyContinue | Stop-Process -force -ErrorAction SilentlyContinue
 
 # Delete the target directory, make sure the deployment/copy is clean
 If (Test-Path $destDir) {

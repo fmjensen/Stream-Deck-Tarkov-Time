@@ -32,11 +32,20 @@ namespace TarkovTime
             {
                 offset = TimeSpan.FromHours(15).TotalMilliseconds;
             }
+
+            // Get the current UTC time
             var utcNow = DateTime.UtcNow.TimeOfDay.TotalMilliseconds;
+
+            // Calculate the Tarkov Time
             var TarkovTime = TimeSpan.FromMilliseconds(offset + (utcNow * 7));
 
-            // This is ugly but it trims the string as needed - feel free to suggest another way to do it!
-            return TarkovTime.ToString().Remove(TarkovTime.ToString().Length - 11).Remove(0, 2);
+            // Format hours with 0 as first digit if hours less than 10
+            string hrs = (TarkovTime.Hours < 10 ? "0" + TarkovTime.Hours.ToString() : TarkovTime.Hours.ToString());
+            // Format hours with 0 as first digit if minutes less than 10
+            string mins = (TarkovTime.Minutes < 10 ? "0" + TarkovTime.Minutes.ToString() : TarkovTime.Minutes.ToString());
+
+            // Return the result
+            return hrs + ":" + mins;
 
             // Inspiration was found at
             // http://www.blackwasp.co.uk/TimespanMultiplication.aspx
